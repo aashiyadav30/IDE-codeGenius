@@ -43,7 +43,7 @@ function App() {
 
     try {
 
-      const res = await axios.post("https://ide-codegeniusbackend.onrender.com/api/gpt", {
+      const res = await axios.post("https://ide-codegenius-backend.onrender.com/api/gpt", {
         message: userMessage,
         model,
       });
@@ -89,7 +89,7 @@ function App() {
     try {
       const code = monacoRef.current.getValue();
 
-      const res = await axios.post("https://ide-codegeniusbackend.onrender.com/compile", {
+      const res = await axios.post("https://ide-codegenius-backend.onrender.com/compile", {
 
         code,
         input: inputText,
