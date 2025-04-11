@@ -1,7 +1,7 @@
 export const sendMessageToGPT = async (message, model = 'gpt-4o-mini') => {
   try {
 
-    const res = await fetch('https://ide-codegeniusbackend.onrender.com/api/gpt/chat', {
+    const res = await fetch('https://ide-codegenius-backend.onrender.com/api/gpt/chat', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ message, model }),
