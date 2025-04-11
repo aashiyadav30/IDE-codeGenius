@@ -1,10 +1,10 @@
+
 # CodeGenius - AI-Powered Online IDE
 
 [![Build Status](https://img.shields.io/badge/build-passing-brightgreen)](https://github.com/yourusername/codegenius/actions)
 [![Code Coverage](https://img.shields.io/badge/coverage-94%25-yellowgreen)](https://codecov.io/)
 [![View Demo](https://img.shields.io/badge/View-Demo-blue?logo=vercel&logoColor=white)](https://codegenius.dev/demo)
 [![Follow](https://img.shields.io/github/followers/yourusername?label=Follow&style=social)](https://github.com/aashiyadav30)
-
 
 **CodeGenius** is a modern, AI-powered online Integrated Development Environment (IDE) that combines code editing capabilities with an integrated AI assistant to enhance developer productivity.
 
@@ -19,7 +19,9 @@
 - **Responsive Design**: Works seamlessly across desktop and mobile devices  
 
 ---
+
 ## 🧰 Tech Stack
+
 <!-- JavaScript -->
 <p>
   <img src="https://img.shields.io/badge/JavaScript-44.2%25-f1e05a?style=flat-square&logo=javascript&logoColor=white"/>
@@ -110,7 +112,39 @@ And more...
    ```
 
 6. **Open in browser:**  
-   Visit [http://localhost:3000](http://localhost:3000)
+   Visit [https://ide-codegenius.onrender.com/](https://ide-codegenius.onrender.com/)
+
+---
+
+### 🧱 Additional Setup for C++ and Java
+
+To use the **C++** and **Java** editors in CodeGenius, you need to ensure the required compilers are available in your system or Docker environment.
+
+#### 🐳 Dockerfile Dependencies
+
+If you are using a Docker-based setup, make sure your Dockerfile includes:
+
+```dockerfile
+# Install C++ compiler
+RUN apt-get update && apt-get install -y g++
+
+# Install Java compiler and runtime
+RUN apt-get install -y openjdk-11-jdk
+```
+
+#### 🖥️ Local Installation
+
+If you're running the backend locally, install the compilers manually:
+
+```bash
+# C++ compiler
+sudo apt install g++
+
+# Java compiler
+sudo apt install openjdk-11-jdk
+```
+
+These are required for backend code execution using the `compilex` package.
 
 ---
 
@@ -169,7 +203,7 @@ We welcome contributions! Please follow these steps:
 
 For questions or support, please contact us:
 
-- 📧 Email: [support@codegenius.dev](mailto:support@codegenius.dev)  
-- 🐦 Twitter: [@CodeGeniusDev](https://twitter.com/CodeGeniusDev)  
-- 🌐 Website: [https://codegenius.dev](https://codegenius.dev)  
----
+- 📧 Email: [aashiyadav1330@gmail.com](mailto:aashiyadav1330@gmail.com)  
+- 🌐 Website: [https://ide-codegenius.onrender.com/](https://ide-codegenius.onrender.com/)
+
+Let me know if you’d like this turned into a downloadable file or automatically updated in your GitHub repo!
