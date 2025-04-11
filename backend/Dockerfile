@@ -1,10 +1,12 @@
-# Use Node.js LTS base image
+# Use Node.js base image
 FROM node:18
 
-# Install required system compilers (g++, python3, openjdk)
+# Install required packages for compiling C++, Python, and Java
 RUN apt-get update && apt-get install -y \
     build-essential \
+    g++ \
     python3 \
+    python3-pip \
     openjdk-17-jdk \
     && apt-get clean
 
@@ -14,17 +16,21 @@ WORKDIR /app
 # Copy package.json and package-lock.json
 COPY package*.json ./
 
-# Install Node dependencies
+# Install node dependencies
 RUN npm install
 
-# Copy all backend files
+# Copy entire project
 COPY . .
 
-# Create the temp folder for Java code fixes (optional but safe)
+# Create temp directory (needed for compilex or temp file operations)
 RUN mkdir -p /app/temp
 
-# Expose port
+# Set environment variables for Java
+ENV JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+ENV PATH="$JAVA_HOME/bin:$PATH"
+
+# Expose your backend port (adjust if yours is different)
 EXPOSE 5000
 
-# Start the server
+# Start the backend
 CMD ["node", "server.js"]
